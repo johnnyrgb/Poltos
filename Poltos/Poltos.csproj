@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+      <Folder Include="Models\" />
+      <Folder Include="ViewModels\" />
+      <Folder Include="Images\" />
+      <Folder Include="Vectors\" />
+      <Resource Include="Fonts\Rounded.ttf" />
+	  <Resource Include="Fonts\Raleway-Bold.ttf" />
+	  <Resource Include="Fonts\Raleway-BoldItalic.ttf" />
+	  <Resource Include="Fonts\Raleway-Light.ttf" />
+	  <Resource Include="Fonts\Raleway-LightItalic.ttf" />
+	  <Resource Include="Fonts\Raleway-Medium.ttf" />
+	  <Resource Include="Fonts\Raleway-MediumItalic.ttf" />
+	  <Resource Include="Fonts\Raleway-Regular.ttf" />
+	  <Resource Include="Fonts\Raleway-Italic.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FontAwesome.WPF" Version="4.7.0.9" />
+    <PackageReference Include="SharpVectors.Wpf" Version="1.8.2" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,151 @@
+﻿<Window x:Class="Poltos.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Poltos.Views"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        mc:Ignorable="d"
+        Title="MainView" Height="700" Width="1200"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="SingleBorderWindow"
+        ResizeMode="CanResizeWithGrip"
+        >
+    <!--Window.DataContext-->
+    
+    <!--Main Screen-->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="253"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Sidebar-->
+        <Grid Grid.Column="0">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1, 0.5">
+                    <GradientStop Color="{StaticResource secondaryBackgroundColor1}" Offset="0"/>
+                    <GradientStop Color="{StaticResource secondaryBackgroundColor2}" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <!--Logotype-->
+            <TextBlock Grid.Row="0"
+                       Text="полтос" 
+                       Foreground="{StaticResource titleTextColor1}" 
+                       FontFamily="/Fonts/#Rounded" 
+                       FontSize="33"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       />
+            <!--Sidebar Buttons-->
+            <StackPanel Grid.Row="1" x:Name="sidebarButtons">
+                <RadioButton Style="{StaticResource menuButton}"
+                     Tag="{StaticResource color1}">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:ImageAwesome Icon="Home" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Обзор" Style="{StaticResource menuButtonText}"/>
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton Style="{StaticResource menuButton}"
+                     Tag="{StaticResource color2}">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:ImageAwesome Icon="List" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Записи" Style="{StaticResource menuButtonText}"/>
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton Style="{StaticResource menuButton}"
+                     Tag="{StaticResource color3}">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:ImageAwesome Icon="CreditCard" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Счета" Style="{StaticResource menuButtonText}"/>
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton Style="{StaticResource menuButton}"
+                     Tag="{StaticResource color4}">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:ImageAwesome Icon="Flag" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Цели" Style="{StaticResource menuButtonText}"/>
+                    </StackPanel>
+                </RadioButton>
+            </StackPanel>
+        </Grid>
+
+        <!--Main Screen-->
+        <Grid Grid.Column="1" >
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
+                    <GradientStop Color="{StaticResource primaryBackgroundColor1}" Offset="0"/>
+                    <GradientStop Color="{StaticResource primaryBackgroundColor2}" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0"
+                                Orientation="Horizontal"
+                                VerticalAlignment="Center">
+                    <fa:ImageAwesome Icon="Home" 
+                                         Height="20" 
+                                         Width="20" 
+                                         Foreground="{StaticResource titleTextColor2}" 
+                                         Margin="35,0,10,0"/>
+                    <TextBlock Text="Обзор" 
+                                   Foreground="{StaticResource titleTextColor2}"
+                                   FontSize="16"
+                                   FontFamily="/Fonts/#Raleway"
+                                   FontWeight="Medium"
+                                   VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <!--User Options-->
+                <StackPanel Grid.Column="1"
+                                Orientation="Horizontal"
+                                FlowDirection="RightToLeft"
+                                VerticalAlignment="Center"
+                                Margin="0,0,35,0">
+                    <TextBlock Text="Имя пользователя"
+                                   Foreground="{StaticResource titleTextColor3}"
+                                   FontFamily="/Fonts/#Raleway"
+                                   FontSize="12"
+                                   FontWeight="Light"
+                                   VerticalAlignment="Center"
+                                   Margin="0,0,15,0"/>
+                    <Button Style="{StaticResource iconButton}"
+                                Tag="{StaticResource color1}"
+                                Margin="0,0,0,0">
+                        <fa:ImageAwesome Icon="PencilSquareOutline" Style="{StaticResource iconBarButtonIcon}"/>
+                    </Button>
+                    <Button Style="{StaticResource iconButton}"
+                                Tag="{StaticResource color1}"
+                                Margin="0,0,0,0">
+                        <fa:ImageAwesome Icon="EnvelopeOutline" Style="{StaticResource iconBarButtonIcon}"/>
+                    </Button>
+                    <Button Style="{StaticResource iconButton}"
+                                Tag="{StaticResource color1}"
+                                Margin="0,0,0,0">
+                        <fa:ImageAwesome Icon="LightbulbOutline" Style="{StaticResource iconBarButtonIcon}"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+            
+            <!--Content Section-->
+            <ContentControl Content=""
+                            Grid.Row="1"
+                            Margin="25,25,25,25">
+
+            </ContentControl>
+        </Grid>
+
+    </Grid>
+</Window>
