@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:Poltos.Views"
         xmlns:fa="http://schemas.fontawesome.io/icons/"
         mc:Ignorable="d"
-        Title="MainView" Height="700" Width="1200"
+        Title="Poltos — приложение для учета личных финансов" Height="700" Width="1200"
         WindowStartupLocation="CenterScreen"
         WindowStyle="SingleBorderWindow"
         ResizeMode="CanResizeWithGrip"
         >
     <!--Window.DataContext-->
-    
+
     <!--Main Screen-->
     <Grid>
         <Grid.ColumnDefinitions>
@@ -23,7 +23,7 @@
         <!--Sidebar-->
         <Grid Grid.Column="0">
             <Grid.Background>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1, 0.5">
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1, 0.5" >
                     <GradientStop Color="{StaticResource secondaryBackgroundColor1}" Offset="0"/>
                     <GradientStop Color="{StaticResource secondaryBackgroundColor2}" Offset="1"/>
                 </LinearGradientBrush>
@@ -32,10 +32,10 @@
                 <RowDefinition Height="80"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            
+
             <!--Logotype-->
             <TextBlock Grid.Row="0"
-                       Text="полтос" 
+                       Text="влад гей" 
                        Foreground="{StaticResource titleTextColor1}" 
                        FontFamily="/Fonts/#Rounded" 
                        FontSize="33"
@@ -45,28 +45,33 @@
             <!--Sidebar Buttons-->
             <StackPanel Grid.Row="1" x:Name="sidebarButtons">
                 <RadioButton Style="{StaticResource menuButton}"
-                     Tag="{StaticResource color1}">
+                     Tag="{StaticResource color1}"
+                             Checked="sidebarButton_Checked"
+                             IsChecked="True">
                     <StackPanel Orientation="Horizontal">
                         <fa:ImageAwesome Icon="Home" Style="{StaticResource menuButtonIcon}"/>
                         <TextBlock Text="Обзор" Style="{StaticResource menuButtonText}"/>
                     </StackPanel>
                 </RadioButton>
                 <RadioButton Style="{StaticResource menuButton}"
-                     Tag="{StaticResource color2}">
+                     Tag="{StaticResource color2}"
+                             Checked="sidebarButton_Checked">
                     <StackPanel Orientation="Horizontal">
                         <fa:ImageAwesome Icon="List" Style="{StaticResource menuButtonIcon}"/>
                         <TextBlock Text="Записи" Style="{StaticResource menuButtonText}"/>
                     </StackPanel>
                 </RadioButton>
                 <RadioButton Style="{StaticResource menuButton}"
-                     Tag="{StaticResource color3}">
+                     Tag="{StaticResource color3}"
+                             Checked="sidebarButton_Checked">
                     <StackPanel Orientation="Horizontal">
                         <fa:ImageAwesome Icon="CreditCard" Style="{StaticResource menuButtonIcon}"/>
                         <TextBlock Text="Счета" Style="{StaticResource menuButtonText}"/>
                     </StackPanel>
                 </RadioButton>
                 <RadioButton Style="{StaticResource menuButton}"
-                     Tag="{StaticResource color4}">
+                     Tag="{StaticResource color4}"
+                             Checked="sidebarButton_Checked">
                     <StackPanel Orientation="Horizontal">
                         <fa:ImageAwesome Icon="Flag" Style="{StaticResource menuButtonIcon}"/>
                         <TextBlock Text="Цели" Style="{StaticResource menuButtonText}"/>
@@ -94,13 +99,14 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0"
                                 Orientation="Horizontal"
-                                VerticalAlignment="Center">
-                    <fa:ImageAwesome Icon="Home" 
+                                VerticalAlignment="Center"
+                            x:Name="pageHeader">
+                    <fa:ImageAwesome
                                          Height="20" 
                                          Width="20" 
                                          Foreground="{StaticResource titleTextColor2}" 
                                          Margin="35,0,10,0"/>
-                    <TextBlock Text="Обзор" 
+                    <TextBlock
                                    Foreground="{StaticResource titleTextColor2}"
                                    FontSize="16"
                                    FontFamily="/Fonts/#Raleway"
@@ -138,7 +144,7 @@
                     </Button>
                 </StackPanel>
             </Grid>
-            
+
             <!--Content Section-->
             <ContentControl Content=""
                             Grid.Row="1"
